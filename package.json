@@ -11,7 +11,13 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "STATUS=0; yarn lint:css || STATUS=$?; yarn lint:ts || STATUS=$?; exit $STATUS",
+    "lint:fix": "STATUS=0; yarn lint:css:fix || STATUS=$?; yarn lint:ts:fix || STATUS=$?; exit $STATUS",
+    "lint:ts": "yarn eslint 'src/**/*.{tsx,ts,jsx,js}'",
+    "lint:ts:fix": "yarn eslint 'src/**/*.{tsx,ts,jsx,js}' --fix",
+    "lint:css": "yarn stylelint 'src/**/*.css'",
+    "lint:css:fix": "yarn stylelint 'src/**/*.css' --fix"
   },
   "eslintConfig": {
     "extends": "react-app"
