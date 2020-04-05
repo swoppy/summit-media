@@ -1,0 +1,62 @@
+@import '../../assets/fonts.css';
+
+.container {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  padding: 32px 20px;
+  position: relative;
+}
+
+.container:hover {
+  color: red;
+  background-color: gainsboro;
+  cursor: pointer;
+}
+
+.baseOption {
+  position: absolute;
+  background-color: gainsboro;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  overflow: hidden;
+}
+
+.defaultHide {
+  display: none;
+}
+
+.showOption {
+  composes: baseOption;
+  max-height: 0;
+  animation: slideDown 1s ease-in forwards;
+}
+
+.hideOption {
+  composes: baseOption;
+  max-height: 1000px;
+  animation: slideUp 800ms ease-out forwards;
+}
+
+.optionText {
+  font-size: 12px;
+  font-family: OpenSans, sans-serif;
+  font-weight: 800;
+  padding: 10px 20px;
+}
+
+.optionText:hover {
+  color: red;
+  cursor: pointer;
+}
+
+@keyframes slideDown {
+  to {
+    max-height: 1000px;
+  }
+}
+
+@keyframes slideUp {
+  to {
+    max-height: 0;
+  }
+}
